@@ -8,7 +8,9 @@ on:
 
 jobs:
   deployment:
-    runs-on: self-runner
+    runs-on: self-hosted
     steps:
       - name: execute echo command
-        run: echo "Hello World!"
+        run: |
+          cd /var/www/html/wp3
+          git pull
